@@ -6,26 +6,6 @@ from elements import SphericalRefraction, OutputPlane
 from physics import refract
 from lenses import PlanoConvex
 
-def find_focal_point(lens, rmax=5.0):
-    """
-    Estimate focal point by propagating paraxial rays and finding z where rays cross.
-    """
-    #Try a range of z values to find minimal RMS
-    zs = np.linspace(120, 200, 100)
-    best_rms = float('inf')
-    best_z = None
-
-    for z in zs:
-        bundle = RayBundle(rmax=rmax, nrings=5, multi=6)
-        output = OutputPlane(z_0=z)
-        bundle.propagate_bundle(lens.elements() + [output])
-        rms = bundle.rms()
-        if rms < best_rms:
-            best_rms = rms
-            best_z = z
-
-    return best_z
-
 def task8():
     """
     Task 8.
@@ -239,6 +219,26 @@ def task14():
     #Also return value at r = 2.5 mm
     idx_2_5 = np.argmin(np.abs(radii - 2.5))
     return fig, rms_values[idx_2_5], diff_values[idx_2_5]
+
+def find_focal_point(lens, rmax=5.0):
+    """
+    Estimate focal point by propagating paraxial rays and finding z where rays cross.
+    """
+    #Try a range of z values to find minimal RMS
+    zs = np.linspace(120, 200, 100)
+    best_rms = float('inf')
+    best_z = None
+
+    for z in zs:
+        bundle = RayBundle(rmax=rmax, nrings=5, multi=6)
+        output = OutputPlane(z_0=z)
+        bundle.propagate_bundle(lens.elements() + [output])
+        rms = bundle.rms()
+        if rms < best_rms:
+            best_rms = rms
+            best_z = z
+
+    return best_z
 
 def task15():
     """
