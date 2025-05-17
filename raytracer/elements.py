@@ -4,11 +4,9 @@ from physics import refract
 class OpticalElement:
     """
     Base class for optical elements. Not meant to be instantiated directly.
-
     Methods:
     intercept(ray):
         Determine where the given ray intersects the element.
-    
     propagate_ray(ray):
         Propagate the ray through this element.
     """
@@ -16,11 +14,9 @@ class OpticalElement:
     def intercept(self, ray):
         """
         Calculate where the ray intersects the element.
-        
         Parameters:
         ray : Ray
-            The ray to test for intersection.
-
+            The ray to test for intersection
         Returns:
         intercept_point : numpy array or None
             The point of intersection, or None if there is no intersection.
@@ -30,11 +26,9 @@ class OpticalElement:
     def propagate_ray(self, ray):
         """
         Propagate a ray through the element.
-
         Parameters:
         ray : Ray
             The ray to be propagated.
-
         1. Check for intersection,
         2. Apply changes (e.g. reflection/refraction),
         3. Update the ray’s internal state.
@@ -44,7 +38,6 @@ class OpticalElement:
 class SphericalRefraction(OpticalElement):
     """
     Represents a spherical refracting surface.
-
     Parameters:
     z_0 : float
         Intercept of the surface with the z-axis.

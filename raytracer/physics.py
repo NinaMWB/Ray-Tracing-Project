@@ -2,8 +2,7 @@ import numpy as np
 
 def refract(direc, normal, n_1, n_2):
     """
-    Apply Snell's law to compute the refracted ray direction.
-
+    Apply Snell's law to compute the refracted ray direction
     Parameters:
     direc : np.ndarray
         Incident direction (normalised 3D vector).
@@ -13,7 +12,6 @@ def refract(direc, normal, n_1, n_2):
         Refractive index of the current medium.
     n_2 : float
         Refractive index of the next medium.
-
     Returns:
     np.ndarray or None
         Refracted direction (normalised), or None if total internal reflection occurs.

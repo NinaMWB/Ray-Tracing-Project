@@ -4,7 +4,6 @@ import numpy as np
 class Ray:
     """
     A class to represent an optical ray in 3D space.
-    
     Attributes:
     _points : list of np.ndarray
         List of 3D points along the ray path.
@@ -14,8 +13,7 @@ class Ray:
 
     def __init__(self, pos=None, direc=None):
         """
-        Initialise a new Ray object.
-
+        Initialise a new Ray object
         Parameters:
         pos : list or np.ndarray, optional
             Initial position of the ray. Default is [0, 0, 0].
