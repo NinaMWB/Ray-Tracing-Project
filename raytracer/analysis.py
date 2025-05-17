@@ -1,10 +1,10 @@
 """Analysis module."""
 import matplotlib.pyplot as plt
 import numpy as np
-from raytracer.rays import Ray, RayBundle
-from raytracer.elements import SphericalRefraction, OutputPlane
-from raytracer.physics import refract
-from raytracer.lenses import PlanoConvex
+from rays import Ray, RayBundle
+from elements import SphericalRefraction, OutputPlane
+from physics import refract
+from lenses import PlanoConvex
 
 def find_focal_point(lens, rmax=5.0):
     """

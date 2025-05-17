@@ -1,5 +1,5 @@
 import numpy as np
-from raytracer.physics import refract
+from physics import refract
 
 class OpticalElement:
     """

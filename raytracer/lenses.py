@@ -1,4 +1,4 @@
-from raytracer.elements import SphericalRefraction
+from elements import SphericalRefraction
 
 class PlanoConvex:
     def __init__(self, z_0, curvature1, curvature2, n_inside, n_outside, thickness):
